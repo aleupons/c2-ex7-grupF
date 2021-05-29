@@ -9,6 +9,7 @@
 .contenedor-principal {
   background-color: var(--color-principal);
   color: var(--color-text);
+  padding-top: 10px;
 }
 .sidebar {
   background-color: var(--color-secundari);
@@ -16,7 +17,15 @@
 .consola {
   background-color: var(--color-console);
   color: var(--color-text-console);
+  overflow: scroll;
+  margin: 0 5px;
+  max-height: 90vh;
+  font-size: 0.9rem;
 }
 .boton {
   background-color: var(--color-btn);
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  padding: 5px;
 }
