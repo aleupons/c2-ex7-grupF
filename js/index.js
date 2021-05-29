@@ -24,3 +24,23 @@ const puestos = (equipos) =>
       }) => puesto
     )
     .filter((puesto, index, puestos) => puestos.indexOf(puesto) === index);
+
+const edadMedia = (equipos) =>
+  equipos
+    .map(
+      ({
+        asignado: {
+          empleado: { edad },
+        },
+      }) => edad
+    )
+    .reduce(
+      (acumulador, edad, index, edades) => edad / edades.length + acumulador,
+      0
+    );
+
+const equiposPorEdad = (equipos) =>
+  equipos.sort(
+    (equipo1, equipo2) =>
+      equipo1.asignado.empleado.edad - equipo2.asignado.empleado.edad
+  );
