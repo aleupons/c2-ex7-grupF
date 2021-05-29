@@ -44,3 +44,21 @@ const equiposPorEdad = (equipos) =>
     (equipo1, equipo2) =>
       equipo1.asignado.empleado.edad - equipo2.asignado.empleado.edad
   );
+
+const equiposPorTipo = (equipos) => {
+  const equiposPorTipo = [];
+  const tiposEquipo = equipos
+    .map(({ tipo }) => tipo)
+    .filter((equipo, index, equipos) => equipos.indexOf(equipo) === index);
+  for (const tipoEquipo of tiposEquipo) {
+    const equiposDeUnTipo = { tipo: "", equipos: [] };
+    for (const equipo of equipos) {
+      if (equipo.tipo === tipoEquipo) {
+        equiposDeUnTipo.equipos.push(equipo);
+      }
+    }
+    equiposDeUnTipo.tipo = tipoEquipo;
+    equiposPorTipo.push(equiposDeUnTipo);
+  }
+  return equiposPorTipo;
+};
