@@ -20,6 +20,7 @@
   overflow: scroll;
   margin: 0 5px;
   max-height: 90vh;
+  max-width: 100%;
   font-size: 0.9rem;
 }
 .boton {
