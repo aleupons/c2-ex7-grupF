@@ -17,3 +17,6 @@
   background-color: var(--color-console);
   color: var(--color-text-console);
 }
+.boton {
+  background-color: var(--color-btn);
+}
