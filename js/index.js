@@ -49,7 +49,7 @@ const equiposPorTipo = (equipos) => {
   const equiposPorTipo = [];
   const tiposEquipo = equipos
     .map(({ tipo }) => tipo)
-    .filter((equipo, index, equipos) => equipos.indexOf(equipo) === index);
+    .filter((tipo, index, tipos) => tipos.indexOf(tipo) === index);
   for (const tipoEquipo of tiposEquipo) {
     const equiposDeUnTipo = { tipo: "", equipos: [] };
     for (const equipo of equipos) {
