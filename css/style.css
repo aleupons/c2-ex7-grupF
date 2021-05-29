@@ -19,7 +19,7 @@
   color: var(--color-text-console);
   overflow: scroll;
   margin: 0 5px;
-  max-height: 90vh;
+  max-height: 80vh;
   max-width: 100%;
   font-size: 0.9rem;
 }
