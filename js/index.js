@@ -6,3 +6,10 @@ const equiposProvincia = (equipos, provincia) =>
     (equipo) =>
       equipo.asignado.provincia.toLowerCase() === provincia.toLowerCase()
   );
+
+const provincias = (equipos) =>
+  equipos
+    .map(({ asignado: { provincia } }) => provincia)
+    .filter(
+      (provincia, index, provincias) => provincias.indexOf(provincia) === index
+    );
