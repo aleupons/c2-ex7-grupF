@@ -17,6 +17,10 @@
 .consola {
   background-color: var(--color-console);
   color: var(--color-text-console);
+  overflow: scroll;
+  margin: 0 5px;
+  max-height: 90vh;
+  font-size: 0.9rem;
 }
 .boton {
   background-color: var(--color-btn);
