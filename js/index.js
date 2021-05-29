@@ -13,3 +13,14 @@ const provincias = (equipos) =>
     .filter(
       (provincia, index, provincias) => provincias.indexOf(provincia) === index
     );
+
+const puestos = (equipos) =>
+  equipos
+    .map(
+      ({
+        asignado: {
+          empleado: { puesto },
+        },
+      }) => puesto
+    )
+    .filter((puesto, index, puestos) => puestos.indexOf(puesto) === index);
