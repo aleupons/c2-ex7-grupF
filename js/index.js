@@ -35,7 +35,7 @@ const edadMedia = (equipos) =>
       }) => edad
     )
     .reduce(
-      (acumulador, edad, index, edades) => edad / edades.length + acumulador,
+      (acumulador, edad, _index, edades) => edad / edades.length + acumulador,
       0
     );
 
@@ -45,7 +45,7 @@ const equiposPorEdad = (equipos) =>
       equipo1.asignado.empleado.edad - equipo2.asignado.empleado.edad
   );
 
-const equiposPorTipo = (equipos) => {
+const equiposPorTipo = (equipos, tipo) => {
   const equiposPorTipo = [];
   const tiposEquipo = equipos
     .map(({ tipo }) => tipo)
@@ -60,5 +60,11 @@ const equiposPorTipo = (equipos) => {
     equiposDeUnTipo.tipo = tipoEquipo;
     equiposPorTipo.push(equiposDeUnTipo);
   }
-  return equiposPorTipo;
+  return tipo;
 };
+const equiposTipoLocalidad = (equipos, tipo, localidad) =>
+  equipos.filter(
+    (equipoTipo) =>
+      equipoTipo.tipo.toLowerCase() === tipo &&
+      equipoTipo.asignado.poblacion.toLowerCase() === localidad.toLowerCase()
+  );
