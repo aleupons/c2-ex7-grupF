@@ -70,7 +70,9 @@ const equiposTipoLocalidad = (equipos, tipo, localidad) =>
   );
 const resumenEquipos = (equipos, id, poblacion, provincia) =>
   equipos.map((equipos) => [
-    id === equipos.id,
-    poblacion === equipos.asignado.poblacion,
-    provincias === equipos.asignado.provincia,
+    {
+      id: equipos.id,
+      poblacion: equipos.asignado.poblacion,
+      provincias: equipos.asignado.provincia,
+    },
   ]);
